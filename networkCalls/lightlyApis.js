@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'fileants-production.up.railway.app/api/v1/',
+    baseURL: 'https://fileants-production.up.railway.app/api/v1/',
     timeout: 5000,
 });
 
