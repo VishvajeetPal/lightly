@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Logo from "../public/logo.png"
-import FileDrop from "../Components/FileDrop";
-import FileShare from "../Components/fileShar";
+import FileDrop from "../components/FileDrop";
+import FileShare from "../components/fileShar";
 
 
 export default function Home() {
