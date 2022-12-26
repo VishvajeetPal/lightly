@@ -52,11 +52,18 @@ function FileDrop(props) {
 
     const OnUploadCLick = (e) => {
         console.log("clicked")
+        console.log(acceptedFiles[0].size/ 1024 / 1024)
+        if (acceptedFiles[0].size/ 1024 / 1024 >2){
+            console.log("Exceeded")
+            setWarning("File size is more than 25 mb.")
+            return
+        }
+
         setDisableUpload(true)
         if (acceptedFiles.length === 0){
             setWarning("Error : Select a file first.")
             setDisableUpload(false)
-        }else {
+        }else  {
             UploadFile(acceptedFiles[0],time,(res) => {
                 console.log(res)
 
@@ -82,8 +89,8 @@ function FileDrop(props) {
     const acceptedFileItems = acceptedFiles.map(file => (
         <div key={file.path} className="border-2 rounded-lg p-2 my-2 mr-14 w-full">
             <div className="flex flex-row items-center">
-                <AiOutlineFile size='1.8rem'/>
-                <p className="font-space text-lg text-clip">
+                <AiOutlineFile size='1.8rem' className={`text-white`}/>
+                <p className="text-white font-space text-lg text-clip">
                     {file.name}
                 </p>
             </div>
@@ -110,7 +117,7 @@ function FileDrop(props) {
                     <div {...getRootProps({ className: ' h-60 flex flex-col dropzone border-2 border-dashed p-4 md:p-10 my-2 items-center rounded-lg' })}>
                         <input {...getInputProps()} />
 
-                        <p>Drag and drop some files here, or click to select files</p>
+                        <p className={`text-white`}>Drag and drop some files here, or click to select files</p>
                         <Image src={AddPhoto} alt={"Add Photo"} className="m-4"/>
                         <em className="font-semibold text-base text-center font-space">{props.msg}</em>
                     </div>

@@ -50,12 +50,12 @@ function Share(props) {
                 <div className={`border-gray-800 border-2 w-full flex flex-col bg-[#0D0F22] p-6 mx-6 w-2/3 h-1/2  rounded-xl `}>
 
                     <div className={`flex flex-row justify-center`}>
-                        <p className={`text-4xl font-bold w-96 text-center`}>Your file is encrypted and ready to
+                        <p className={`text-white text-4xl font-bold w-96 text-center`}>Your file is encrypted and ready to
                             send</p>
                     </div>
 
                     <div className={`flex flex-row justify-center`}>
-                        <p className={`text-lg my-8 w-96 text-center`}>Copy the link to share your file with others</p>
+                        <p className={`text-white text-lg my-8 w-96 text-center`}>Copy the link to share your file with others</p>
                     </div>
 
 
