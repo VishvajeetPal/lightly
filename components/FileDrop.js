@@ -111,10 +111,10 @@ function FileDrop(props) {
     });
 
     return (
-        <div className={`w-full flex flex-col bg-[#0D0F22] p-6 mx-6 w-1/2 h-1/2`}>
+        <div className={`w-full flex flex-col bg-[#0D0F22] p-3 md:p-6 md:mx-6 w-full md:w-1/2 h-1/2`}>
             <section className="">
                 <div className="flex flex-col">
-                    <div {...getRootProps({ className: ' h-60 flex flex-col dropzone border-2 border-dashed p-4 md:p-10 my-2 items-center rounded-lg' })}>
+                    <div {...getRootProps({ className: 'h-60  flex flex-col dropzone border-2 border-dashed p-4 md:p-10 my-2 items-center rounded-lg' })}>
                         <input {...getInputProps()} />
 
                         <p className={`text-white`}>Drag and drop some files here, or click to select files</p>
@@ -159,7 +159,7 @@ function FileDrop(props) {
             </div>
 
             <button onClick={OnUploadCLick} type="button"
-                    className={`text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 mb-2`} disabled={disableUpload}>Upload File
+                    className={` text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 mb-2`} disabled={disableUpload}>Upload File
             </button>
             <p className={`text-red-500 font-bold text-lg`}> {warning}</p>
 

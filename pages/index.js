@@ -9,9 +9,9 @@ import FileShare from "../components/fileShar";
 export default function Home() {
     return (
         <div className={`bg-[#181923] w-full h-screen`}>
-            <div className={`flex flex-row w-full mx-8 items-center`}>
+            <div className={`flex flex-row w-full md:mx-2 md:mx-8 items-center`}>
                 <Image src={Logo} alt={"logo"} className={`w-16 my-8`}/>
-                <p className={`text-white font-bold text-3xl my-8 mx-4`}>Lightly</p>
+                <p className={`text-white font-bold text-3xl my-8 md:mx-4`}>Lightly</p>
             </div>
 {/*
             <FileDrop/>
