@@ -12,6 +12,7 @@ function FileDrop(props) {
     const [time, setTime] = useState(0);
     const [disableUpload, setDisableUpload] = useState(false);
     const [warning, setWarning] = useState("");
+    const [buttonText, setButtonText] = useState("Upload File");
     const router = useRouter()
 
 
@@ -53,15 +54,18 @@ function FileDrop(props) {
     const OnUploadCLick = (e) => {
         console.log("clicked")
         console.log(acceptedFiles[0].size/ 1024 / 1024)
+        setButtonText("Uploading...")
         if (acceptedFiles[0].size/ 1024 / 1024 >2){
             console.log("Exceeded")
             setWarning("File size is more than 25 mb.")
+            setButtonText("Upload File")
             return
         }
 
         setDisableUpload(true)
         if (acceptedFiles.length === 0){
             setWarning("Error : Select a file first.")
+            setButtonText("Upload File")
             setDisableUpload(false)
         }else  {
             UploadFile(acceptedFiles[0],time,(res) => {
@@ -70,6 +74,7 @@ function FileDrop(props) {
                 if (res === undefined) {
                     setWarning("Error : some error happened")
                     setDisableUpload(false)
+                    setButtonText("Upload File")
 
                 }else if(res.status === 200){
                     console.log(res.data.data)
@@ -78,6 +83,7 @@ function FileDrop(props) {
                         pathname: '/share',
                         query: { link: res.data.data,name : acceptedFiles[0].name }
                     })
+                    setButtonText("Upload File")
                 }
             })
         }
@@ -159,7 +165,7 @@ function FileDrop(props) {
             </div>
 
             <button onClick={OnUploadCLick} type="button"
-                    className={` text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 mb-2`} disabled={disableUpload}>Upload File
+                    className={` text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 mb-2`} disabled={disableUpload}>{buttonText}
             </button>
             <p className={`text-red-500 font-bold text-lg`}> {warning}</p>
 
