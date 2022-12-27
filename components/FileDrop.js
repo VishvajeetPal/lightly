@@ -55,7 +55,7 @@ function FileDrop(props) {
         console.log("clicked")
         console.log(acceptedFiles[0].size/ 1024 / 1024)
         setButtonText("Uploading...")
-        if (acceptedFiles[0].size/ 1024 / 1024 >10){
+        if (acceptedFiles[0].size/ 1024 / 1024 >150){
             console.log("Exceeded")
             setWarning("File size is more than 10 mb.")
             setButtonText("Upload File")
